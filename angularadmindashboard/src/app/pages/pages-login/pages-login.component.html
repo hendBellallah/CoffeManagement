@@ -1,0 +1,36 @@
+<main>
+    <div class="container">
+       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+          <div class="container">
+             <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                   <div class="d-flex justify-content-center py-4"> <a routerLink="/" class="logo d-flex align-items-center w-auto"> <img src="assets/img/logo.png" alt=""> 
+                     <span class="d-none d-lg-block">Admin</span> </a></div>
+                      <mat-card class="card mb-3">
+                        <mat-card-title class="card-title text-center pb-1 fs-1"> Login to Your Account</mat-card-title>
+                        <p class="text-center small">Enter your email & password to login</p>
+                        <mat-card-content class="card-body">
+                            <form id="formData" #userData="ngForm" (ngSubmit)="LoginUser(userData.value)" >
+                              <div class="col-12">
+                                 <mat-input-container class="input-group has-validation">
+                                     <input matInput placeholder="Email" name="login" type="email" ngModel  class="form-control">
+                                 </mat-input-container>
+                              </div>
+                                 <br>
+                                 <div class="col-12">
+                                 <mat-input-container class="input-group has-validation">
+                                     <input matInput placeholder="Password" name="password" type="password" ngModel class="form-control">
+                                 </mat-input-container>
+                                 </div>
+                                 <br>
+                                 <input type="submit" value="Login" matButton class="btn btn-primary w-100">
+                             </form>
+                         </mat-card-content>
+                     </mat-card>
+                   <div class="credits"> created with  <i class="bi bi-heart-fill"></i><a href="https://freeetemplates.com/"> </a> </div>
+                </div>
+             </div>
+          </div> 
+       </section> 
+    </div>
+ </main>

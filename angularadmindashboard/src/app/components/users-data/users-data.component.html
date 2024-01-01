@@ -1,0 +1,54 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<main id="main" class="main">
+    <div class="pagetitle">
+       <h1>Data Tables</h1>
+       <nav>
+          <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+             <li class="breadcrumb-item">Users</li>
+             <li class="breadcrumb-item active">Data</li>
+          </ol>
+       </nav>
+    </div>
+    <section class="section">
+       <div class="row">
+          <div class="col-lg-12">
+             <div class="card">
+                <div class="card-body">
+                   <h5 class="card-title">UsersData</h5>
+                   <button type="button" class="btn btn-outline-primary Right"  routerLink="/register">New</button> 
+                   <table class="table datatable">
+                      <thead>
+                         <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Login</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Role</th>
+                            <th scope="col"> Action</th>
+                         </tr>
+                      </thead>
+                      <tbody>
+                         <tr *ngFor="let user of usersList; let i=index;" >
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{user.login}} </td>
+                            <td>{{user.name}}</td>
+                            <td>{{user.role}}</td>
+                            <td>
+                              <button type="submit" class="btn btn-danger" (click)="deleteUser(user.id)">
+                                 <i class="bi bi-trash"></i>
+                              </button>
+                              <a href="/users/{{ user.id }}" class="btn btn-primary"><i class="bi bi-eye"></i></a>
+                              
+                            </td>
+                         </tr>
+                         
+                      </tbody>
+                   </table>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+ </main>
+ <app-footer></app-footer>

@@ -1,0 +1,63 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<main id="main" class="main">
+  <div class="pagetitle">
+    <h1>Data Tables</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item">Categories</li>
+        <li class="breadcrumb-item active">Data</li>
+      </ol>
+    </nav>
+  </div>
+  <section class="section">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">CategoriesData</h5>
+            <button type="button" class="btn btn-outline-primary Right" routerLink="/addCategory">New</button>
+            <table class="table datatable">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let category of categoriesList; let i = index;">
+                  <th scope="row">{{ i + 1 }}</th>
+                  <td>{{ category.name }}</td>
+                  <td>
+                    <button type="button" class="btn btn-danger" ng-click="deleteCategorie(category.id)">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                      <!-- <button 
+                        type="button" 
+                        class="btn btn-danger btn-simple btn-xs"
+                        style="margin-right: 0.5rem;" 
+                        (click)="deleteCategorie(category.id)">
+                           delete
+                    </button>  -->
+                <!-- <a routerLink="/categories/{{ category.id }}">
+                <button 
+                  type="button"
+                  class="btn btn-info btn-simple btn-xs"
+                  style="margin-right: 0.5rem;" (click)="deleteCategorie(category.id)">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </a>                                                                                   -->
+                    <a routerLink="/categories/{{ category.id }}" class="btn btn-primary"><i class="bi bi-eye"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<app-footer></app-footer>

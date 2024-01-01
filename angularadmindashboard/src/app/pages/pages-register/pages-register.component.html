@@ -1,0 +1,72 @@
+<main>
+    <div class="container">
+       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+          <div class="container">
+             <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                   <div class="d-flex justify-content-center py-4"> <a routerLink="/" class="logo d-flex align-items-center w-auto"> <img src="assets/img/logo.png" alt=""> <span class="d-none d-lg-block">Admin</span> </a></div>
+                   <div class="card mb-3">
+                      <div class="card-body">
+                         <div class="pt-4 pb-2">
+                            <h5 class="card-title text-center pb-0 fs-4">Add new user</h5>
+                            <p class="text-center small">Enter personal details to create user account</p>
+                         </div>
+                         <mat-card class="row g-4 needs-validation">
+                           <mat-card-content class="card-body">
+                               <form id="formData" *ngIf="!isSuccessful" #userData="ngForm" (ngSubmit)="registerUser(userData.value)">
+                                
+                                    <div class="col-12">
+                                    <mat-input-container class="input-group has-validation" >
+                                        <input matInput placeholder="Email" name="login" type="email" ngModel>
+                                    </mat-input-container>
+                                 </div>
+                                    <br>
+                                    <div class="col-12">
+                                       <mat-input-container class="input-group has-validation" >
+                                         <input matInput placeholder="Name" name="name" type="text" ngModel>
+                                      </mat-input-container>
+                                     <br>
+                                     <div class="col-12">
+                                       <mat-input-container class="input-group has-validation" >
+                                           <input matInput placeholder="Password" name="password" type="password" ngModel>
+                                       </mat-input-container>
+                                        </div>
+                                    </div>
+                                    
+                                    <br>
+                                    <div class="col-12">
+                                      <div class="form-floating mb-3">
+                                       <mat-input-container class="input-group has-validation" >
+                                          <select class="form-select" id="floatingSelect" aria-label="role" name="role" ngModel>
+                                             <option value="admin">admin</option>
+                                             <option selected value="customer">customer</option>
+                                          </select>
+                                    </mat-input-container>
+                                 </div>
+                                 </div>
+                                    <br>
+                                    <div class="col-12"> 
+                                       <button class="btn btn-primary w-100" type="submit" matButton>Register</button>
+                                    </div>
+                                    <div class="alert alert-warning" *ngIf="isSignUpFailed">
+                                       Signup failed!<br />
+                                     </div>
+                                </form>
+                                <div class="alert alert-success" *ngIf="isSuccessful">
+                                 Your registration is successful!
+                               </div>
+                               <br>
+                               <button type="button" class="btn btn-dark  w-100" matButton  routerLink="/users">Go Back</button>
+                            </mat-card-content>
+                        </mat-card>
+                        
+                       
+                      </div>
+                   </div>
+                   <!-- <div class="credits"> Loved by <a href="https://freeetemplates.com/">FreeeTemplates</a></div> -->
+                </div>
+             </div>
+          </div>
+       </section>
+    </div>
+ </main>
